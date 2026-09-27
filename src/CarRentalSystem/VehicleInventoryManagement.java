@@ -12,7 +12,7 @@ public class VehicleInventoryManagement {
         this.vehicles = vehicles;
     }
 
-    void addVehicle(Vehicle vehicle){
+    public void addVehicle(Vehicle vehicle){
         this.vehicles.add(vehicle);
     }
 

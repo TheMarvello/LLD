@@ -5,12 +5,12 @@ import java.util.List;
 
 public class Store {
     int storeId;
-    int storeName;
+    String storeName;
     VehicleInventoryManagement vehicleInventoryManagement;
     Location location;
     List<Reservation> reservations;
 
-    Store(int storeId, int storeName, VehicleInventoryManagement vehicleInventoryManagement, Location location){
+    Store(int storeId, String storeName, VehicleInventoryManagement vehicleInventoryManagement, Location location){
         this.storeId = storeId;
         this.storeName = storeName;
         this.vehicleInventoryManagement = vehicleInventoryManagement;

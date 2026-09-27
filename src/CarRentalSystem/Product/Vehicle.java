@@ -2,12 +2,12 @@ package CarRentalSystem.Product;
 
 public class Vehicle {
     int id;
-    int vehicleNo;
+    String vehicleNo;
     VehicleType vehicleType;
     Status status;
     boolean isAvailable;
 
-    Vehicle(int id, int vehicleNo, VehicleType vehicleType, Status status, boolean isAvailable) {
+    Vehicle(int id, String vehicleNo, VehicleType vehicleType, Status status, boolean isAvailable) {
         this.id = id;
         this.vehicleNo = vehicleNo;
         this.vehicleType = vehicleType;

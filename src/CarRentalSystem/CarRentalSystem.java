@@ -18,4 +18,10 @@ public class CarRentalSystem {
         }
         return null;
     }
+    public void addStore(Store store){
+        this.stores.add(store);
+    }
+    public void addUser(User user){
+        this.users.add(user);
+    }
 }
