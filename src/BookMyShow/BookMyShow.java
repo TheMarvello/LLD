@@ -1,6 +1,7 @@
 package BookMyShow;
 
 import BookMyShow.Enum.City;
+import BookMyShow.Enum.PaymentType;
 import BookMyShow.Enum.SeatCategory;
 
 import java.util.ArrayList;
@@ -45,15 +46,15 @@ public class BookMyShow {
     }
     List<Seat> createSeats(){
         List<Seat> seats = new ArrayList<>();
-        for(int i = 0; i<10; i++) {
+        for(int i =1; i<=10; i++) {
             Seat seat = new Seat(i, 1, SeatCategory.SILVER, 100);
             seats.add(seat);
         }
-        for(int i = 11; i<20; i++){
+        for(int i = 11; i<=20; i++){
             Seat seat = new Seat(i, 2, SeatCategory.GOLD, 200);
             seats.add(seat);
         }
-        for(int i = 21; i<30; i++) {
+        for(int i = 21; i<=30; i++) {
             Seat seat = new Seat(i, 3, SeatCategory.PLATINUM, 300);
             seats.add(seat);
         }
@@ -100,11 +101,13 @@ public class BookMyShow {
         System.out.println("Selected Show: " + selectedShow.showTime + " at " + selectedShow.screen.getScreenName());
 
         //select a seat
-        int seatId = 1;
+        Seat selectedSeat = selectedShow.getAvailableSeats().get(0);
+        System.out.println("Selected Seat: " + selectedSeat.getSeatId() + " in " + selectedSeat.getSeatCategory());
 
+        selectedShow.bookSeat(selectedSeat);
+        Booking booking = new Booking(selectedShow, List.of(selectedSeat), new Payment(1, 100, PaymentType.UPI));
 
-
-
+        System.out.println("Booking successful");
     }
 
     public static void main(String[] args){
