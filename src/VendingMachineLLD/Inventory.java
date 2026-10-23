@@ -47,4 +47,27 @@ public class Inventory {
         }
         throw new Exception("Product code invalid");
     }
+    private ProductShelf getProductShelf(int code) throws Exception{
+        for(ProductShelf productShelf: inventory) {
+            if(productShelf.getCode() == code) {
+                if(productShelf.getQuantity() == 0) {
+                    throw new Exception("Product is out of stock");
+                } else {
+                    productShelf.setQuantity(productShelf.getQuantity()-1);
+                    return productShelf;
+                }
+            }
+        }
+        throw new Exception("Product code invalid");
+    }
+
+    public Product dispenseProduct(int productShelfCode) throws Exception {
+        ProductShelf productShelf = getProductShelf(productShelfCode);
+        productShelf.setQuantity(productShelf.getQuantity()-1);
+        return productShelf.getProduct();
+    }
+
+    public ProductShelf[] getProductShelfList(){
+        return inventory;
+    }
 }

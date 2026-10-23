@@ -18,4 +18,11 @@ public class ProductShelf {
     public int getQuantity() {
         return quantity;
     }
+
+    public Product getProduct() {
+        return product;
+    }
+    public boolean isAvailable(){
+        return quantity>0;
+    }
 }

@@ -10,4 +10,12 @@ public class Product {
         this.price = price;
         this.name = name;
     }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
