@@ -10,6 +10,4 @@ public interface State {
     public void selectProduct(VendingMachine vendingMachine, int productShelfCode) throws Exception;
     public int returnChange(int change) throws Exception;
     public Product dispenseProduct(VendingMachine vendingMachine, int productShelfCode) throws Exception;
-
-
 }
